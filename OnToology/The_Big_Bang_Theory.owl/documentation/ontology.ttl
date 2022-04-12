@@ -1,0 +1,513 @@
+@prefix : <http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#> .
+
+<http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory> rdf:type owl:Ontology ;
+                                                                          <http://purl.org/dc/terms/creator> "Joaquim Gómez Orteu"@en ;
+                                                                          <http://purl.org/dc/terms/title> "The Big Bang Theory Show"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#composed
+:composed rdf:type owl:ObjectProperty ,
+                   owl:AsymmetricProperty ;
+          rdfs:domain :Composers ;
+          rdfs:range :Songs ;
+          rdfs:comment "Band that composed a song."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#wonAward
+:wonAward rdf:type owl:ObjectProperty ,
+                   owl:AsymmetricProperty ;
+          rdfs:domain :Actor ;
+          rdfs:range :Awards ;
+          rdfs:comment "Actor who won an award."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Appearences
+:Appearences rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Person ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "Appearences (by chapter) in the show total ammount of chapters."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#duration
+:duration rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Seasons ;
+          rdfs:range xsd:float ;
+          rdfs:comment "Total duration of a show element."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#isIntroTheme
+:isIntroTheme rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Songs ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "Defines if a song is the intro theme song."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#rates
+:rates rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Rates ;
+       rdfs:range xsd:float ;
+       rdfs:comment "Rate (numeric) given to the show."@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Actor
+:Actor rdf:type owl:Class ;
+       rdfs:subClassOf :Person ;
+       rdfs:comment "Big Bang Theory actor."@en ;
+       rdfs:sameAs "https://dbpedia.org/ontology/starring" .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Average
+:Average rdf:type owl:Class ;
+         rdfs:subClassOf :Rates ;
+         owl:disjointWith :Bad ,
+                          :Good ;
+         rdfs:comment "Normal rates (5 to 9)."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Awards
+:Awards rdf:type owl:Class ;
+        rdfs:comment "Awards gained by the TV Show and its components."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Bad
+:Bad rdf:type owl:Class ;
+     rdfs:subClassOf :Rates ;
+     owl:disjointWith :Good ;
+     rdfs:comment "Bad rates (under 5)."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Composers
+:Composers rdf:type owl:Class ;
+           rdfs:subClassOf :Soundtrack ;
+           rdfs:comment "Big Bang theory composers and bands involved in the soundtrack."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Creator
+:Creator rdf:type owl:Class ;
+         rdfs:subClassOf :Person ;
+         rdfs:comment "Big Bang Theory creator."@en ;
+         rdfs:sameAs "https://dbpedia.org/ontology/creator" .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Director
+:Director rdf:type owl:Class ;
+          rdfs:subClassOf :Person ;
+          rdfs:comment "Director of the TV Show."@en ;
+          rdfs:sameAs "https://dbpedia.org/ontology/director" .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#ExecutiveProducer
+:ExecutiveProducer rdf:type owl:Class ;
+                   rdfs:subClassOf :Producer ;
+                   rdfs:comment "Big Bang Theory executive producers."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Good
+:Good rdf:type owl:Class ;
+      rdfs:subClassOf :Rates ;
+      rdfs:comment "Good rates (9 or above)."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#MainProducer
+:MainProducer rdf:type owl:Class ;
+              rdfs:subClassOf :Producer ;
+              rdfs:comment "Big Bang Theory main producers."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#OpeningTheme
+:OpeningTheme rdf:type owl:Class ;
+              rdfs:subClassOf :Songs ;
+              rdfs:comment "The Big Bang Theory opening main theme."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Person
+:Person rdf:type owl:Class ;
+        rdfs:comment "Someone who has any realtion with the show."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#PersonalAward
+:PersonalAward rdf:type owl:Class ;
+               rdfs:subClassOf :Awards ;
+               rdfs:comment "Awards gained by the actors due to their work on Big Bang Theory."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Principal
+:Principal rdf:type owl:Class ;
+           rdfs:subClassOf :Actor ;
+           owl:disjointWith :Recurrent ,
+                            :Supporting ;
+           rdfs:comment "Big Bang Theory principal actors."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Producer
+:Producer rdf:type owl:Class ;
+          rdfs:subClassOf :Person ;
+          rdfs:comment "Big Bang Theory producers."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Rates
+:Rates rdf:type owl:Class ;
+       rdfs:comment "Rates and scores of The Big Bang Theory show."@en ;
+       rdfs:sameAs "https://dbpedia.org/property/endrating" .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Recurrent
+:Recurrent rdf:type owl:Class ;
+           rdfs:subClassOf :Actor ;
+           owl:disjointWith :Supporting ;
+           rdfs:comment "Big Bang Theory recurrent actor."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Seasons
+:Seasons rdf:type owl:Class ;
+         rdfs:comment "Big Bang Theory seasons."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Songs
+:Songs rdf:type owl:Class ;
+       rdfs:subClassOf :Soundtrack ;
+       rdfs:comment "Big Bang Theory soundtrack's songs."@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Soundtrack
+:Soundtrack rdf:type owl:Class ;
+            rdfs:comment "TV Show soundtrack"@en .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Supporting
+:Supporting rdf:type owl:Class ;
+            rdfs:subClassOf :Actor ;
+            rdfs:comment "Big Bang Theory supporting actor."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#BarenakedLadies
+:BarenakedLadies rdf:type owl:NamedIndividual ,
+                          :Composers ;
+                 :composed :TheHistoryOfEverything .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#BestActorInAComedysSeries
+:BestActorInAComedysSeries rdf:type owl:NamedIndividual ,
+                                    :Awards .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#BestActorInASeriesComedyOrMusical
+:BestActorInASeriesComedyOrMusical rdf:type owl:NamedIndividual ,
+                                            :Awards .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#BestComedySeries
+:BestComedySeries rdf:type owl:NamedIndividual ,
+                           :Awards .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#BestEnsembleInAComedySeries
+:BestEnsembleInAComedySeries rdf:type owl:NamedIndividual ,
+                                      :Awards .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#BillPrady
+:BillPrady rdf:type owl:NamedIndividual ,
+                    :Creator ,
+                    :ExecutiveProducer .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#BrianPosehn
+:BrianPosehn rdf:type owl:NamedIndividual ,
+                      :Supporting ;
+             :Appearences 15 .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#ChuckLorre
+:ChuckLorre rdf:type owl:NamedIndividual ,
+                     :Creator ,
+                     :ExecutiveProducer .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#FavoriteTVComedyActress
+:FavoriteTVComedyActress rdf:type owl:NamedIndividual ,
+                                  :Awards .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#FayeOshimaBelyeu
+:FayeOshimaBelyeu rdf:type owl:NamedIndividual ,
+                           :MainProducer .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Filmaffinity
+:Filmaffinity rdf:type owl:NamedIndividual ,
+                       :Rates ;
+              :rates "7.7"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#IMBD
+:IMBD rdf:type owl:NamedIndividual ,
+               :Rates ;
+      :rates "9.2"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#JimParsons
+:JimParsons rdf:type owl:NamedIndividual ,
+                     :Principal ;
+            :wonAward :BestActorInAComedysSeries ;
+            :Appearences 279 .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#JohnRossBowie
+:JohnRossBowie rdf:type owl:NamedIndividual ,
+                        :Supporting ;
+               :Appearences 25 .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#JohnnyGalecki
+:JohnnyGalecki rdf:type owl:NamedIndividual ,
+                        :Principal ;
+               :wonAward :BestActorInASeriesComedyOrMusical ;
+               :Appearences 279 .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#KaleyCuoco
+:KaleyCuoco rdf:type owl:NamedIndividual ,
+                     :Principal ;
+            :wonAward :FavoriteTVComedyActress ;
+            :Appearences 279 .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#MarkCendrowski
+:MarkCendrowski rdf:type owl:NamedIndividual ,
+                         :Director .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season1
+:Season1 rdf:type owl:NamedIndividual ,
+                  :Seasons ;
+         :duration "5.67"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season10
+:Season10 rdf:type owl:NamedIndividual ,
+                   :Seasons ;
+          :duration "7.67"^^xsd:float ,
+                    "8.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season11
+:Season11 rdf:type owl:NamedIndividual ,
+                   :Seasons ;
+          :duration "8.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season12
+:Season12 rdf:type owl:NamedIndividual ,
+                   :Seasons ;
+          :duration "8.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season2
+:Season2 rdf:type owl:NamedIndividual ,
+                  :Seasons ;
+         :duration "7.67"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season3
+:Season3 rdf:type owl:NamedIndividual ,
+                  :Seasons ;
+         :duration "7.67"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season4
+:Season4 rdf:type owl:NamedIndividual ,
+                  :Seasons ;
+         :duration "8.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season5
+:Season5 rdf:type owl:NamedIndividual ,
+                  :Seasons ;
+         :duration "8.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season6
+:Season6 rdf:type owl:NamedIndividual ,
+                  :Seasons ;
+         :duration "8.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season7
+:Season7 rdf:type owl:NamedIndividual ,
+                  :Seasons ;
+         :duration "8.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season8
+:Season8 rdf:type owl:NamedIndividual ,
+                  :Seasons ;
+         :duration "8.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Season9
+:Season9 rdf:type owl:NamedIndividual ,
+                  :Seasons ;
+         :duration "8.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#TheHistoryOfEverything
+:TheHistoryOfEverything rdf:type owl:NamedIndividual ,
+                                 :Songs ;
+                        :isIntroTheme "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#WilWheaton
+:WilWheaton rdf:type owl:NamedIndividual ,
+                     :Recurrent ;
+            :Appearences 17 .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#r> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#s> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#p> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#a> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#t> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Rates ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :rates ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#s>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#s> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 9 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Good ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :wonAward ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#a>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Principal ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :PersonalAward ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#a>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :isIntroTheme ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
+                                                                  <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                               rdf:first <urn:swrl:var#t> ;
+                                                                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                                                                          rdf:first "true"^^xsd:boolean ;
+                                                                                                                          rdf:rest rdf:nil
+                                                                                                                        ]
+                                                                                                             ]
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Songs ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :OpeningTheme ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
