@@ -1,0 +1,127 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://vocab.linkeddata.es/ontology/report#detectedProblem
+<http://vocab.linkeddata.es/ontology/report#detectedProblem> rdf:type owl:AnnotationProperty .
+
+
+###  http://vocab.linkeddata.es/ontology/report#entrySubject
+<http://vocab.linkeddata.es/ontology/report#entrySubject> rdf:type owl:AnnotationProperty .
+
+
+###  http://vocab.linkeddata.es/ontology/report#hasEntry
+<http://vocab.linkeddata.es/ontology/report#hasEntry> rdf:type owl:AnnotationProperty .
+
+
+###  http://vocab.linkeddata.es/ontology/report#isEntryOfReport
+<http://vocab.linkeddata.es/ontology/report#isEntryOfReport> rdf:type owl:AnnotationProperty .
+
+
+###  http://vocab.linkeddata.es/ontology/report#vocabularyStatus
+<http://vocab.linkeddata.es/ontology/report#vocabularyStatus> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://vocab.linkeddata.es/ontology/report#numberVocabsError
+<http://vocab.linkeddata.es/ontology/report#numberVocabsError> rdf:type owl:DatatypeProperty .
+
+
+###  http://vocab.linkeddata.es/ontology/report#numberVocabsOK
+<http://vocab.linkeddata.es/ontology/report#numberVocabsOK> rdf:type owl:DatatypeProperty .
+
+
+###  http://vocab.linkeddata.es/ontology/report#numberVocabsWarning
+<http://vocab.linkeddata.es/ontology/report#numberVocabsWarning> rdf:type owl:DatatypeProperty .
+
+
+###  http://vocab.linkeddata.es/ontology/report#reportDate
+<http://vocab.linkeddata.es/ontology/report#reportDate> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://vocab.linkeddata.es/ontology/report#Entry
+<http://vocab.linkeddata.es/ontology/report#Entry> rdf:type owl:Class .
+
+
+###  http://vocab.linkeddata.es/ontology/report#Error
+<http://vocab.linkeddata.es/ontology/report#Error> rdf:type owl:Class .
+
+
+###  http://vocab.linkeddata.es/ontology/report#Report
+<http://vocab.linkeddata.es/ontology/report#Report> rdf:type owl:Class .
+
+
+###  http://vocab.linkeddata.es/ontology/report#Warning
+<http://vocab.linkeddata.es/ontology/report#Warning> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://vocab.linkeddata.es/ontology/report#ENTRY1649798601980HOMEAHMADREPOSPREVCLONE-WGMVTHE_BIG_BANG_THEORYOWL
+<http://vocab.linkeddata.es/ontology/report#ENTRY1649798601980HOMEAHMADREPOSPREVCLONE-WGMVTHE_BIG_BANG_THEORYOWL> rdf:type owl:NamedIndividual ,
+                                                                                                                           <http://vocab.linkeddata.es/ontology/report#Entry> ;
+                                                                                                                  rdfs:label "Entry for vocab /home/ahmad/repos/prevclone-wGmV/The_Big_Bang_Theory.owl" ;
+                                                                                                                  <http://vocab.linkeddata.es/ontology/report#detectedProblem> <http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC> ;
+                                                                                                                  <http://vocab.linkeddata.es/ontology/report#entrySubject> <http://vocab.linkeddata.es/ontology/report#/HOMEAHMADREPOSPREVCLONE-WGMVTHE_BIG_BANG_THEORY.OWL> ;
+                                                                                                                  <http://vocab.linkeddata.es/ontology/report#isEntryOfReport> <http://vocab.linkeddata.es/ontology/report#REPORT1649798601980> ;
+                                                                                                                  <http://vocab.linkeddata.es/ontology/report#vocabularyStatus> "http://vocab.linkeddata.es/ontology/report#warning" .
+
+
+###  http://vocab.linkeddata.es/ontology/report#ENTRY1649798601980REPORTTTL
+<http://vocab.linkeddata.es/ontology/report#ENTRY1649798601980REPORTTTL> rdf:type owl:NamedIndividual ,
+                                                                                  <http://vocab.linkeddata.es/ontology/report#Entry> ;
+                                                                         rdfs:label "Entry for vocab report.ttl" ;
+                                                                         <http://vocab.linkeddata.es/ontology/report#detectedProblem> <http://vocab.linkeddata.es/ontology/report#GENERICERROR> ;
+                                                                         <http://vocab.linkeddata.es/ontology/report#entrySubject> <http://vocab.linkeddata.es/ontology/report#REPORT.TTL> ;
+                                                                         <http://vocab.linkeddata.es/ontology/report#isEntryOfReport> <http://vocab.linkeddata.es/ontology/report#REPORT1649798601980> ;
+                                                                         <http://vocab.linkeddata.es/ontology/report#vocabularyStatus> "http://vocab.linkeddata.es/ontology/report#error" .
+
+
+###  http://vocab.linkeddata.es/ontology/report#GENERICERROR
+<http://vocab.linkeddata.es/ontology/report#GENERICERROR> rdf:type owl:NamedIndividual ,
+                                                                   <http://vocab.linkeddata.es/ontology/report#Error> ;
+                                                          rdfs:label "Error: the vocabulary could not be loaded or processed" .
+
+
+###  http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC
+<http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC> rdf:type owl:NamedIndividual ,
+                                                                         <http://vocab.linkeddata.es/ontology/report#Warning> ;
+                                                                rdfs:label "Warning: title or description missing from vocabulary" .
+
+
+###  http://vocab.linkeddata.es/ontology/report#REPORT1649798601980
+<http://vocab.linkeddata.es/ontology/report#REPORT1649798601980> rdf:type owl:NamedIndividual ,
+                                                                          <http://vocab.linkeddata.es/ontology/report#Report> ;
+                                                                 <http://vocab.linkeddata.es/ontology/report#numberVocabsError> "1" ;
+                                                                 <http://vocab.linkeddata.es/ontology/report#numberVocabsOK> "0" ;
+                                                                 <http://vocab.linkeddata.es/ontology/report#numberVocabsWarning> "1" ;
+                                                                 <http://vocab.linkeddata.es/ontology/report#reportDate> "Tue Apr 12 23:23:21 CEST 2022"^^xsd:dateTime ;
+                                                                 rdfs:label "Report created on Tue Apr 12 23:23:21 CEST 2022" ;
+                                                                 <http://vocab.linkeddata.es/ontology/report#hasEntry> <http://vocab.linkeddata.es/ontology/report#ENTRY1649798601980HOMEAHMADREPOSPREVCLONE-WGMVTHE_BIG_BANG_THEORYOWL> ,
+                                                                                                                       <http://vocab.linkeddata.es/ontology/report#ENTRY1649798601980REPORTTTL> .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
