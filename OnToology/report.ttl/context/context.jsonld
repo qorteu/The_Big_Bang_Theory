@@ -1,0 +1,22 @@
+{
+  "@context" : {
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "numberVocabsWarning" : {
+      "@id" : "http://vocab.linkeddata.es/ontology/report#numberVocabsWarning"
+    },
+    "numberVocabsOK" : {
+      "@id" : "http://vocab.linkeddata.es/ontology/report#numberVocabsOK"
+    },
+    "numberVocabsError" : {
+      "@id" : "http://vocab.linkeddata.es/ontology/report#numberVocabsError"
+    },
+    "reportDate" : {
+      "@id" : "http://vocab.linkeddata.es/ontology/report#reportDate"
+    },
+    "Report" : {
+      "@id" : "http://vocab.linkeddata.es/ontology/report#Report"
+    }
+  }
+}

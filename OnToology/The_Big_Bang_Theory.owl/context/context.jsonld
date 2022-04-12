@@ -1,0 +1,103 @@
+{
+  "@context" : {
+    "Creator" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Creator"
+    },
+    "OpeningTheme" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#OpeningTheme"
+    },
+    "Songs" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Songs"
+    },
+    "ExecutiveProducer" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#ExecutiveProducer"
+    },
+    "Director" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Director"
+    },
+    "composed" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#composed",
+      "@type" : "@id"
+    },
+    "wonAward" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#wonAward",
+      "@type" : "@id"
+    },
+    "Soundtrack" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Soundtrack"
+    },
+    "Recurrent" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Recurrent"
+    },
+    "Average" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Average"
+    },
+    "Supporting" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Supporting"
+    },
+    "Good" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Good"
+    },
+    "Person" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Person"
+    },
+    "Actor" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Actor"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "Producer" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Producer"
+    },
+    "Bad" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Bad"
+    },
+    "rates" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#rates",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "PersonalAward" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#PersonalAward"
+    },
+    "Awards" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Awards"
+    },
+    "duration" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#duration",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "Appearences" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Appearences",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Seasons" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Seasons"
+    },
+    "isIntroTheme" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#isIntroTheme",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Rates" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Rates"
+    },
+    "Composers" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Composers"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#sameAs"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "Principal" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#Principal"
+    },
+    "MainProducer" : {
+      "@id" : "http://www.semanticweb.org/quimg/ontologies/2022/3/The_Big_Bang_Theory#MainProducer"
+    }
+  }
+}
